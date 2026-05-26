@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const router = require("./routes/todoRoutes");
+const router = require("./routes/todoRoutes.js");
 const live_url = "mongodb+srv://bamisioluwaferanmi_db_user:aanuoluwapO93@cluster0.gftucoa.mongodb.net/AuthenticationDB?appName=Cluster0";
 const local_url = "mongodb://localhost:27017/UserDB";
 
