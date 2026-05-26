@@ -1,8 +1,8 @@
-const TodoModel = require('../model/todomodel.js');
+const todoModel = require('../model/todoModel.js');
 
 //CRUD MODEL
 const getAllTodos = async (req, res) => {try
-{const todos = await TodoModel.find();
+{const todos = await todoModel.find();
 return res
 .status(200)
 .json({message : "All Todos", data : todos});}
@@ -14,7 +14,7 @@ return res
 
 const getOneTodo = async (req, res) => {try
 {const {id} = req.params;
-const todo = await TodoModel.findById(id);
+const todo = await todoModel.findById(id);
 return res
 .status(200)
 .json({message : "Todo found", data : todo});}
@@ -26,7 +26,7 @@ return res
 
 const createTodo = async (req, res) => {try
 {const {title, details} = req.body;
-const todo = await TodoModel.create({title, details});
+const todo = await todoModel.create({title, details});
 return res.status(200)
 .json({message : "Todo created", data : todo});}
 catch (err) {
@@ -36,7 +36,7 @@ return res
 
 const updateTodo = async (req, res) => {try
 {const {id} = req.params;
-const todo = await TodoModel.findByIdAndUpdate(
+const todo = await todoModel.findByIdAndUpdate(
 id,
 {completed: true},
 {new: true},);
@@ -49,7 +49,7 @@ return res
 
 const deleteTodo = async (req, res) => {try
 {const {id} = req.params;
-await TodoModel.findByIdAndDelete(id);
+await todoModel.findByIdAndDelete(id);
 return res.status(200)
 .json({message: "Todo deleted",});}
 catch (err) {

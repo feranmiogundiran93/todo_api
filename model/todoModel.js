@@ -7,5 +7,5 @@ time : {type: Date, default : Date.now},
 completed : {type : Boolean, default : false}},
 {timestamps : true});
 
-const TodoModel = mongoose.model('Todo', todoSchema);
-module.exports = TodoModel;
+const todoModel = mongoose.model('Todo', todoSchema);
+module.exports = todoModel;
